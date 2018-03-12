@@ -1,0 +1,324 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "TravelApp",
+  "desc": "Book tickets for official travel",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Bookaticket"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Location",
+      "children": [
+        "FromLocation",
+        "ToLocation"
+      ]
+    },
+    {
+      "name": "Mode of Transportation",
+      "children": [
+        "Flight",
+        "Road",
+        "Train"
+      ]
+    },
+    {
+      "name": "Travel Type",
+      "children": [
+        "Domestic",
+        "International"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "datetimeV2"
+  ],
+  "model_features": [
+    {
+      "name": "book a ticket from hyderabad to bangalore",
+      "mode": true,
+      "words": "book a ticket,from,location,tolocation,fromlocation,on,date",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "block a ticket from bangalore to hyderabad",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 20,
+          "endPos": 28
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 33,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "book a bus ticket from bangalore to hyderabad on 10th march",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Road",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 23,
+          "endPos": 31
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 36,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "book a bus ticket from hyderabad to bangalore",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Road",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 23,
+          "endPos": 31
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 36,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "book a bus ticket to bangalore from hyderabad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Road",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 21,
+          "endPos": 29
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 36,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "book a flight to delhi from hyderabad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Flight",
+          "startPos": 7,
+          "endPos": 12
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 17,
+          "endPos": 21
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 28,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "book a ticket to bangalore on 11th march",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 14,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "book a train ticket from hyderabad to delhi on 11th march",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Road",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 25,
+          "endPos": 33
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 38,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "book a train ticket to hyderabad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Train",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 13,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "bus ticket to hyderabad from delhi on sunday",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Road",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 14,
+          "endPos": 22
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 29,
+          "endPos": 33
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 38,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "flight ticket to mumbai tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Flight",
+          "startPos": 0,
+          "endPos": 5
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 14,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "hey can you please book a flight ticket to delhi from hyderbad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Flight",
+          "startPos": 26,
+          "endPos": 31
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 40,
+          "endPos": 47
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 49,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "please book a flight ticket to bangalore from hyderabad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Flight",
+          "startPos": 14,
+          "endPos": 19
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 28,
+          "endPos": 39
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 41,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "please book a train ticket to bangalore tomorrow from hyderabad",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Train",
+          "startPos": 14,
+          "endPos": 18
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 27,
+          "endPos": 38
+        },
+        {
+          "entity": "Location::FromLocation",
+          "startPos": 49,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "train ticket to hyderabad tomorrow",
+      "intent": "Bookaticket",
+      "entities": [
+        {
+          "entity": "Mode of Transportation::Train",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 6,
+          "endPos": 24
+        }
+      ]
+    }
+  ]
+}
